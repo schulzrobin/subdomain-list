@@ -11,7 +11,7 @@ def find_subdomains(domain):
 # API-Endpoint für Subdomain-Suche
 @app.route('/api/subdomains', methods=['GET'])
 def get_subdomains():
-    domain = request.args.get('domain')
+    domain = request.args.get('d')
     if not domain:
         return jsonify({"error": "Bitte eine Domain angeben."}), 400
     
@@ -22,4 +22,4 @@ def get_subdomains():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host'0.0.0.0', port='80', debug=True)
